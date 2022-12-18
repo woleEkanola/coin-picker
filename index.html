@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coin Picker</title>
+    <!-- <link href="/dist/main.css" rel="stylesheet"> -->
+  </head>
+  <body>
+
+    <div id="loading" class="w-[20%] mx-auto flex justify-center allign-center page_center ">
+      <div>
+
+       <img src="/src/img/loading.gif" class="w-[30%] mx-auto block " />
+        <h1 class="text-3xl font-bold text-gray text-center">
+         Loading ...
+        </h1>
+      </div>
+    </div>
+
+    <div id="game_assets" class="hidden">
+      <img id="idle" src="/src/img/ninja/idle.png" />
+      <img id="idle_back" src="/src/img/ninja/idle_back.png" />
+      <img id="run" src="/src/img/ninja/run.png" />
+      <img id="run_back" src="/src/img/ninja/run_back.png" />
+      <img id="jump" src="/src/img/ninja/jump.png" />
+      <img id="jump_back" src="/src/img/ninja/Jump__back.png" />
+      <img id="attack" src="/src/img/ninja/attack.png" />
+      <img id="attack_back" src="/src/img/ninja/Attack__back.png" />
+      <img id="slide" src="/src/img/ninja/slide.png" />
+      <img id="throw" src="/src/img/ninja/throw.png" />
+      <img id="jump_throw" src="/src/img/ninja/jump_throw.png" />
+      <img id="dead" src="/src/img/ninja/dead.png" />
+      <img id="missile" src="/src/img/missile.png" />
+      <img id="base1" src="/src/img/base1.png" />
+      <img id="base2" src="/src/img/base2.png" />
+      <img id="cactus" src="/src/img/cactus.png" />
+      <img id="cloud" src="/src/img/cloud.png" />
+      <img id="coin" src="/src/img/coin.png" />
+      <img id="floor" src="/src/img/floor.png" />
+      <img id="platform" src="/src/img/platform2.png" />
+      <img id="rock" src="/src/img/rock.png" /> 
+      <img id="sky_bg" src="/src/img/sky_bg.png" />
+      <img id="sky_fg" src="/src/img/sky_fg.png" />
+      <img id="tree" src="/src/img/tree.png" />
+
+    </div> 
+   <canvas id="game_canvas" class="hidden page_center shadow-md"></canvas>
+
+    <!-- <canvas id="game_canvas" class=" page_center shadow-md"></canvas> -->
+
+    <script type="module" src="/game.js"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
+body{
+  background: rgb(83,74,241);
+  background: -moz-linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);
+  background: -webkit-linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);
+  background: linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);} */
+  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#534af1",endColorstr="#d100ff",GradientType=1);} */
+canvas{
+
+  width:800px;
+  height: 567px;
+}
+
+.page_center{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.hid{
+  display: none;
+}
