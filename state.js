@@ -130,7 +130,7 @@ export class Run extends State{
     enter(){
         super.enter()
         // this.gameHeight - (this.height * 0.2)
-        this.player.speed = this.player.maxSpeed
+        this.player.speed = this.player.maxSpeed * 0.2
     }
 }
 

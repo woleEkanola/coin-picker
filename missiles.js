@@ -6,8 +6,8 @@ export class Missile {
         this.image.src = image
         this.width = width * 0.2
         this.height = height * 0.2
-        this.x = player.x
-        this.y = player.y
+        this.x = player.x + (player.width * 0.2)
+        this.y = player.y  + ((player.width *0.2)* 0.5)
         this.player = player
         this.speed= 0
         this.maxSpeed=5

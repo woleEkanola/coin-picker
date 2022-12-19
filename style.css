@@ -1,14 +1,43 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-body{
-  background: rgb(83,74,241);
-  background: -moz-linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);
-  background: linear-gradient(90deg, rgba(83,74,241,1) 0%, rgba(188,100,212,1) 31%, rgba(209,0,255,1) 100%);} */
-  /* filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#534af1",endColorstr="#d100ff",GradientType=1);} */
-canvas{
+
+
+.a{
+  top: -60vh
+}
+
+li{
+  color:antiquewhite;
+  padding: 10px 15px
+}
+
+.bgg{
+  background: linear-gradient(278deg, #61ddfe, #f6da22, #e28800);
+  background-size: 600% 600%;
+
+  -webkit-animation: AnimationName 30s ease infinite;
+  -moz-animation: AnimationName 30s ease infinite;
+  animation: AnimationName 30s ease infinite;
+}
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+  canvas{
 
   width:800px;
   height: 567px;

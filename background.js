@@ -24,7 +24,7 @@ export class Background {
 
     update(gameframe, direction){
   
-       console.log('oooo', this.x)
+    //    console.log('oooo', this.x)
         this.speed = this.game.gameSpeed * this.speedfactor * direction
         this.x = gameframe * this.speed % this.game.width
     

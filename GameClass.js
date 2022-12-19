@@ -1,6 +1,8 @@
 
 import InputHandler from "./input"
 import { Background } from "./background"
+import store from "store"
+import { Coins } from "./coins"
 
 export class GameClass {
     constructor(ctx, width, height, bacgroundArray, player){
@@ -8,6 +10,7 @@ export class GameClass {
     this.width = width
     this.height = height
     this.gameStates= []
+    this.coinsArray = new Coins(document.getElementById('coin').src,155, 153, player)
     this.currentGameState= 'play'
     this.bgArray = generateBackgrounds(this)
     this.player = player
@@ -17,6 +20,13 @@ export class GameClass {
     this.gameSpeed = 5
     this.gameframe  = 0
     
+    }
+    pause(){
+        this.currentGameState = 'pause'
+    }
+
+    play(){
+        this.currentGameState = 'play'
     }
     
     drawStage(){
@@ -37,9 +47,12 @@ export class GameClass {
         this.lastTime = timeStamp
         this.ctx.clearRect(0,0, this.width, this.height)
        this.drawStage()
-       if(this.currentGameState == 'play') this.player.update(this.input.lastKey)
+       if(store.get('gameStart')) {
+        // console.log('ppppp')
+        this.player.update(this.input.lastKey)}
         this.player.draw(this.ctx, this.deltaTime)
-       
+        this.coinsArray.draw(this.ctx)
+        this.coinsArray.update()
        if(this.player.moveFront()) this.updateStage(-1)
     
        if(this.player.missiles.length >0){
