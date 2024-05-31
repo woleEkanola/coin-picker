@@ -5,7 +5,7 @@ import platform_src from '/src/img/platform2.png'
 import floor_src from '/src/img/floor.png'
 import ninja_attack_src from '/src/img/ninja/attack.png'
 import ninja_jump_src from '/src/img/ninja/jump.png'
-
+import { initPWA } from './pwa.js'
 
 import Character from '/src/classes/character'
 
@@ -19,7 +19,7 @@ import store from 'store'
 import {c, CANVAS_HEIGHT, CANVAS_WIDTH, gamespeed} from './canvas'
 
 
-
+const app = document.querySelector('body')
 let gameframe = 0
 init_constants(contants)
 // let gamespeed= store.get('gamespeed')
@@ -96,4 +96,4 @@ document.addEventListener('keyup', e=>{
 })
 
 
-
+initPWA(app)
