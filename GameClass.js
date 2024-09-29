@@ -10,7 +10,7 @@ export class GameClass {
     this.width = width
     this.height = height
     this.gameStates= []
-    this.coinsArray = new Coins(document.getElementById('coin').src,155, 153, player)
+    this.coinsArray = []
     this.currentGameState= 'play'
     this.bgArray = generateBackgrounds(this)
     this.player = player
@@ -19,7 +19,11 @@ export class GameClass {
     this.deltaTime = 0
     this.gameSpeed = 5
     this.gameframe  = 0
+    this.gamePoint = 0
     
+    }
+    setCoinsArray(newArray){
+        this.coinsArray = newArray
     }
     pause(){
         this.currentGameState = 'pause'
@@ -27,6 +31,7 @@ export class GameClass {
 
     play(){
         this.currentGameState = 'play'
+        
     }
     
     drawStage(){
@@ -39,10 +44,15 @@ export class GameClass {
          background.update(this.gameframe, direction)
         })
       }
-
+createCoin(){
+    let coin_y = Math.floor( (Math.random() * 460))
+    // console.log(this.coinsArray)
+    let coin= new Coins(document.getElementById('coin').src,155, 153, this.player, Math.floor( Math.random() * 770), coin_y)
+this.coinsArray.push(coin)
+}
 
     animate(timeStamp){
-
+// console.log(this.gameframe % 100)
         this.deltaTime = timeStamp - this.lastTime
         this.lastTime = timeStamp
         this.ctx.clearRect(0,0, this.width, this.height)
@@ -51,8 +61,20 @@ export class GameClass {
         // console.log('ppppp')
         this.player.update(this.input.lastKey)}
         this.player.draw(this.ctx, this.deltaTime)
-        this.coinsArray.draw(this.ctx)
-        this.coinsArray.update()
+        if(this.coinsArray.length < 10 ){
+            if(this.gameframe < 510){
+
+                this.createCoin()
+            }else{
+                if(this.gameframe % 510 == 509 ){
+                    while(10 -this.coinsArray.length > 0){
+                       this.createCoin() 
+                    }
+                }
+            }
+        }
+        this.coinsArray.forEach(coin => coin.draw(this.ctx))
+        this.coinsArray.forEach(coin => coin.update(this.coinsArray, this.setCoinsArray.bind(this), this.gamePoint))
        if(this.player.moveFront()) this.updateStage(-1)
     
        if(this.player.missiles.length >0){
