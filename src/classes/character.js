@@ -24,7 +24,7 @@ export default class Character extends Img{
 
     }
     draw(gameframe){
-        console.log('ggg', (( Math.floor((-1 * gameframe)/5) % 10) * this.frameWidth))
+        // console.log('ggg', (( Math.floor((-1 * gameframe)/5) % 10) * this.frameWidth))
         c.drawImage(this.img, 20 +(( Math.floor((-1 * gameframe)/5) % 10) * this.frameWidth) , 0, this.frameWidth,458, 170, 395, this.newW, this.newH)
        
     }

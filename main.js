@@ -54,21 +54,6 @@ gameframe --
 }
 animate()
 
-// document.addEventListener('keydown', e=>{
-
-//   if(e.key == ' '){
-
-//     animate()
-//   }
-// })
-
-// document.addEventListener('keyup', e=>{
-
-//   if(e.key == ' '){
-//     cancelAnimationFrame(an)
-//     console.log(an)
-//   }
-// })
 
 document.addEventListener('keypress', e=>{
 
@@ -76,9 +61,6 @@ document.addEventListener('keypress', e=>{
     ninja.updateImg(ninja_attack_src, 536, 97.45, 90)
   }
 
-  // if(e.key == 'm'){
-  //   ninja.updateImg(ninja_src, 360, 71, 90)
-  // }
 
 })
 

@@ -64,7 +64,7 @@ export default class Player{
       // console.log(this.onGround())
       this.vy += this.weight
     }else{
-      console.log(this.onGround())
+      // console.log(this.onGround())
       this.vy = 0
     }
   }
