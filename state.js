@@ -185,7 +185,7 @@ export class Jump extends State{
     }
     enter(){
         super.enter()
-       if(this.player.onGround()) this.player.vy = -15
+       if(this.player.onGround()) this.player.vy = -10
        this.player.speed = this.player.maxSpeed * 0.2
     }
 }
@@ -209,7 +209,7 @@ export class Jump_Back extends State{
     }
     enter(){
         super.enter()
-       if(this.player.onGround()) this.player.vy = -15
+       if(this.player.onGround()) this.player.vy = -10
        this.player.speed = -1 * (this.player.maxSpeed * 0.2)
     }
 }
